@@ -12,14 +12,16 @@ class OrderSummary extends Component  {
         const ingredientSummary = Object.keys(this.props.ingredients)
         .map( i => {
             return (
-                <li key={i + 1}>
+                <li key={i}>
                     <span>{i}:</span> {this.props.ingredients[i]}
                 </li>)
         })
         return(
             <Auxc>
                 <h2>Order Summary</h2>
-                {ingredientSummary}
+                <ul>
+                    {ingredientSummary}
+                </ul>                
                 <span><strong>Total price: {this.props.price.toFixed(2)}</strong></span>
                 <p>Continue to checkout?</p>
                 <Button btnType="Danger" clicked={this.props.purchaseCancel}>Cancel</Button>
