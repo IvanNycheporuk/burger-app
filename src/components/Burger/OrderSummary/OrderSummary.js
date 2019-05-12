@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Auxc from '../../../hoc/AuxC/AuxC';
 import Button from '../../UI/Button/Button'
 
 class OrderSummary extends Component  {
@@ -17,7 +16,7 @@ class OrderSummary extends Component  {
                 </li>)
         })
         return(
-            <Auxc>
+            <>
                 <h2>Order Summary</h2>
                 <ul>
                     {ingredientSummary}
@@ -26,10 +25,9 @@ class OrderSummary extends Component  {
                 <p>Continue to checkout?</p>
                 <Button btnType="Danger" clicked={this.props.purchaseCancel}>Cancel</Button>
                 <Button btnType="Success" clicked={this.props.purchaseContinue}>Continue</Button>
-            </Auxc>
+            </>
         )
     }
-
 }
 
 export default OrderSummary;
